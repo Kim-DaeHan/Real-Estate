@@ -11,7 +11,7 @@ contract RealEstate {
     address public owner; //상태 변수에 public 붙히면 자동적으로 owner 변수에 get함수 적용
     address[10] public buyers; //딱 10명만 살수 있음, 매입주 주소를 저장, 매물을 구입하고 있는 계정을 이 배열에 저장(buyers[_id] = msg.sender)
 
-    event LogBuyRealEstate(             //이벤트의 내용도 블록안에 저장
+    event LogBuyRealEstate(            //이벤트의 내용도 블록안에 저장
         address _buyer,
         uint _id
     );
