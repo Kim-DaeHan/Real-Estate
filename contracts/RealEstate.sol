@@ -26,7 +26,6 @@ contract RealEstate {
         buyerInfo[_id] = Buyer(msg.sender, _name, _age);    //현재 계정의 주소, 이름, 나이를 넘겨서 매핑의 value 값 만듬
 
         //owner.transfer(msg.value); //솔리디티 버전문제
-
         address(uint160(owner)).transfer(msg.value); //msg.value 는 이함수로 넘어온 이더, 오너한테 매입가를 트랜스퍼~
         //가나슈 2번째 계정에서 이더를 보내서 1번째 계정에 이더가 늘어남
         emit LogBuyRealEstate(msg.sender, _id); //이벤트 발생후 블록 log부분에 정보 저장
