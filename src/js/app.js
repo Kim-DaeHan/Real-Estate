@@ -22,6 +22,7 @@ App = {
   },
 
   initWeb3: function() {
+    //web3 는 솔리디티랑 자바스크립트 연결다리 역할
     if(typeof web3 !== 'undefined'){    //메타마스크가 깔려 있는경우, web3 가 undefined일경우는 메타마스크가 안 깔려있을때
       App.web3Provider = web3.currentProvider;
       web3 = new Web3(web3.currentProvider);
