@@ -120,11 +120,13 @@ $(function() {
   //html 페이지가 다 로드가 되었을때 어떤걸 실행하라고 정의 할 수 있는 공간
   $('#buyModal').on('show.bs.modal', function(e){
     //해당 템플릿의 id 필드를 찾고 그 id 값을 변수에 저장
+    //e.relatedTarget == 매입버튼
     var id = $(e.relatedTarget).parent().find('.id').text();
     //템플릿의 가격 필드에서 가져온 이더값이 스트링 타입 그것을 float 타입으로 바꾸고 toWel를 써서 이더값을 wei로 바꿔서 변수 저장
     var price = web3.toWei(parseFloat($(e.relatedTarget).parent().find('.price').text() || 0), "ether");
 
     //모달에 있는 id 속성이 id 인것과 price인것을 찾아서 각각의 input val에 id, price 값을 담아둠
+    //e.currentTarget == buyModal 모달
     $(e.currentTarget).find('#id').val(id);
     $(e.currentTarget).find('#price').val(price);
   });
